@@ -92,6 +92,7 @@ def playerStandings():
 
 def reportMatch(winner, loser):
     """Records the outcome of a single match between two players.
+    Verifies that both players are registered
 
     Args:
       winner:  the id number of the player who won
@@ -101,9 +102,12 @@ def reportMatch(winner, loser):
     loser = int(bleach.clean(loser, strip=True))
     db = connect()
     c = db.cursor()
-    c.execute("INSERT INTO matches (winner, loser) VALUES(%s, %s)",
-              (int(winner), int(loser),))
-    db.commit()
+    c.execute("SELECT player_id FROM players")
+    players = [row[0] for row in c.fetchall()]
+    if ((winner in players) and ((loser in players) or (loser == 0))):
+        c.execute("INSERT INTO matches (winner, loser) VALUES(%s, %s)",
+                  (int(winner), int(loser),))
+        db.commit()
     db.close()
 
 
@@ -113,7 +117,7 @@ def swissPairings():
     Assuming that there are an even number of players registered, each player
     appears exactly once in the pairings.  Each player is paired with another
     player with an equal or nearly-equal win record, that is, a player adjacent
-    to him or her in the standings.
+    to him or her in the standings. If odd pairing, player in last recieved BYE
 
     Returns:
       A list of tuples, each of which contains (id1, name1, id2, name2)
@@ -130,10 +134,11 @@ def swissPairings():
     pairs = []
     participants = len(players)
     if (participants % 2 != 0):
-        i = 1
-        pairs.append((players[0][0], players[0][1], 0, 'BYE'))
-    else:
-        i = 0
+        participants = participants - 1
+        pairs.append((players[participants][0], players[participants][1],
+                      0, 'BYE'))
+
+    i = 0
     while (i < participants):
         pairs.append((players[i][0], players[i][1],
                       players[i+1][0], players[i+1][1]))
