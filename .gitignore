@@ -3,7 +3,13 @@ __pycache__\
 *.pyc
 
 # vagrant
-.vagrant\
+acceptance_config.yml
+boxes/*
+/.vagrant
+/website/docs/.vagrant
+/website/www/.vagrant
+/vagrant-spec.config.rb
+
 
 # Windows image file caches
 Thumbs.db
