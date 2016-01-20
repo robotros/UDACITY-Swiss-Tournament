@@ -32,6 +32,6 @@ The following will be required to run this program
 
 ### Footnotes
 
-1. *dependecies included in Vagrant VB
+* *dependecies included in Vagrant VB
 	Instructions to use VM for dependecies can be found at [UDACITY](https://www.udacity.com/wiki/ud088/vagrant)
-2. Project Requirements can be found at [UDACITY.com](http://www.UDACITY.com/)
+* Project Requirements can be found at [UDACITY.com](http://www.UDACITY.com/)
