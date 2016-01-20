@@ -1,4 +1,4 @@
-**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+**Table of Contents** 
 
 - [PROJECT 2](#project-2)
 	- [Tournament Results](#tournament-results)
