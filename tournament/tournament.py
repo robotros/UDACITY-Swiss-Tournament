@@ -9,7 +9,7 @@
 
     Last Update: met basic requirements.
 
-    notes: line 83 is considered long by PEP8 but is a SQL execute
+    notes: line 86 is considered long by PEP8 but is a SQL execute
 """
 
 
@@ -18,15 +18,19 @@ import time
 import bleach
 
 
-def connect():
+def connect(database_name="tournament"):
     """Connect to the PostgreSQL database.  Returns a database connection."""
-    return psycopg2.connect("dbname=tournament")
+    try:
+        db = psycopg2.connect("dbname = {}".format(database_name))
+        c = db.cursor()
+        return db, c
+    except:
+        print("Databse Connection Failed")
 
 
 def deleteMatches():
     """Remove all the match records from the database."""
-    db = connect()
-    c = db.cursor()
+    db, c = connect()
     c.execute("DELETE FROM Matches --")
     db.commit()
     db.close()
@@ -34,8 +38,7 @@ def deleteMatches():
 
 def deletePlayers():
     """Remove all the player records from the database."""
-    db = connect()
-    c = db.cursor()
+    db, c = connect()
     c.execute("DELETE FROM Players --")
     db.commit()
     db.close()
@@ -43,8 +46,7 @@ def deletePlayers():
 
 def countPlayers():
     """Returns the number of players currently registered."""
-    db = connect()
-    c = db.cursor()
+    db, c = connect()
     c.execute("SELECT count(player_id) FROM players")
     count = c.fetchone()[0]
     db.close()
@@ -60,9 +62,8 @@ def registerPlayer(name):
     Args:
       name: the player's full name (need not be unique).
     """
-    db = connect()
+    db, c = connect()
     name = str(bleach.clean(name, strip=True))
-    c = db.cursor()
     c.execute("INSERT INTO players (full_name) VALUES(%s)", (name,))
     db.commit()
     db.close()
@@ -81,8 +82,7 @@ def playerStandings():
         wins: the number of matches the player has won
         matches: the number of matches the player has played
     """
-    db = connect()
-    c = db.cursor()
+    db, c = connect()
     c.execute("SELECT player_id, full_name, wins, matches FROM Player_Standings")
     players = [(row[0], row[1], int(row[2]), int(row[3]))
                for row in c.fetchall()]
@@ -100,8 +100,7 @@ def reportMatch(winner, loser):
     """
     winner = int(bleach.clean(winner, strip=True))
     loser = int(bleach.clean(loser, strip=True))
-    db = connect()
-    c = db.cursor()
+    db, c = connect()
     c.execute("SELECT player_id FROM players")
     players = [row[0] for row in c.fetchall()]
     if ((winner in players) and ((loser in players) or (loser == 0))):
@@ -126,8 +125,7 @@ def swissPairings():
         id2: the second player's unique id
         name2: the second player's name
     """
-    db = connect()
-    c = db.cursor()
+    db, c = connect()
     c.execute("SELECT player_id, full_name FROM Player_Standings")
     players = [(row[0], row[1])
                for row in c.fetchall()]
