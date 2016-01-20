@@ -3,11 +3,12 @@
     This file contains functions that use DB-API calls
     to manage a swiss tournament database
     Author: Aron Roberts
-    Version: 1.02
+    Version: 1.03
     Date: 1/16/2016
     filename: tournament.py
 
-    Last Update: met basic requirements.
+    Last Update: 1/19/2016
+    added cursor creation into connect()
 
     notes: line 86 is considered long by PEP8 but is a SQL execute
 """
