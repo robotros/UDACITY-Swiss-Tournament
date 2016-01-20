@@ -24,8 +24,7 @@ The following will be required to run this program
 
 ### Quickstart
 
-1. Create Tournament Database using psql
-2. Import tournament.sql using psql
+1. run command `psql -f tournament.sql`
 3. run tournament_test.py using python
 
 
