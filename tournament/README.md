@@ -1,4 +1,4 @@
-# **PROJECT 2****
+# **PROJECT 2**
 ## Tournament Results
 
 ### Description
@@ -24,8 +24,9 @@ The following will be required to run this program
 
 ### Quickstart
 
-1. run command `psql -f tournament.sql`
-3. run tournament_test.py using python
+1. Open terminal or shell in working folder
+2. run command `psql -f tournament.sql`
+3. run command `python tournament_test.py`
 
 
 
