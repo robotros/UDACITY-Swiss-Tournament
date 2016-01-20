@@ -1,12 +1,12 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [PROJECT 2](#)
-	- [Tournament Results](#)
-		- [Description](#)
-		- [What is Included](#)
-		- [Dependencies](#)
-		- [Quickstart](#)
-		- [Footnotes](#)
+- [PROJECT 2](#project-2)
+	- [Tournament Results](#tournament-results)
+		- [Description](#description)
+		- [What is Included](#what-is-included)
+		- [Dependencies](#dependencies)
+		- [Quickstart](#quickstart)
+		- [Footnotes](#footnotes)
 
 
 # **PROJECT 2**
