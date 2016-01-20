@@ -1,6 +1,13 @@
 # **PROJECT 2**
 ## Tournament Results
 
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+	- [Description](#)
+	- [What is Included](#)
+	- [Dependencies](#)
+	- [Quickstart](#)
+	- [Footnotes](#)
+
 ### Description
 
 Project 2 is  a database schema to store the game matches between players 
