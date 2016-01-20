@@ -25,7 +25,7 @@ The following will be required to run this program
 ### Quickstart
 
 1. Open terminal or shell in working folder
-2. run command `psql -f tournament.sql`
+2. **run command `psql -f tournament.sql`
 3. run command `python tournament_test.py`
 
 
@@ -34,4 +34,5 @@ The following will be required to run this program
 
 * *dependecies included in Vagrant VB
 	Instructions to use VM for dependecies can be found at [UDACITY](https://www.udacity.com/wiki/ud088/vagrant)
+* **Quickstart step 2 is already done when using included Vagrantfile and pg_config.sh
 * Project Requirements can be found at [UDACITY.com](http://www.UDACITY.com/)
