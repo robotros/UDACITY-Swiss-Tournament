@@ -1,6 +1,3 @@
-# **PROJECT 2**
-## Tournament Results
-
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
 - [PROJECT 2](#)
@@ -10,6 +7,9 @@
 		- [Dependencies](#)
 		- [Quickstart](#)
 		- [Footnotes](#)
+
+# **PROJECT 2**
+## Tournament Results
 
 ### Description
 
