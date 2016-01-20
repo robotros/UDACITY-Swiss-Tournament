@@ -2,11 +2,12 @@
 ## Tournament Results
 
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
-	- [Description](#)
-	- [What is Included](#)
-	- [Dependencies](#)
-	- [Quickstart](#)
-	- [Footnotes](#)
+
+- [Description](#)
+- [What is Included](#)
+- [Dependencies](#)
+- [Quickstart](#)
+- [Footnotes](#)
 
 ### Description
 
